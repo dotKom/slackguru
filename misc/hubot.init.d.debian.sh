@@ -17,12 +17,12 @@
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 DESC="Onlineguru Hubot node bot"
 NAME=hubot
-USER=hubot
-GROUP=hubot
+USER=root
+GROUP=root
 BOT_PATH=/root/git/slackguru
 PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:$BOT_PATH/node_modules:$BOT_PATH/node_modules/hubot/node_modules
 DAEMON=$BOT_PATH/bin/$NAME
-DAEMON_ARGS="--adapter campfire --name hubot"
+DAEMON_ARGS="--adapter slack --name onlineguru"
 PIDFILE=$BOT_PATH/$NAME.pid
 LOGFILE=$BOT_PATH/$NAME.log
 SCRIPTNAME=/etc/init.d/$NAME
@@ -31,13 +31,13 @@ INIT_VERBOSE=yes
 # Read configuration variable file if it is present
 [ -r $BOT_PATH/hubot.conf ] && . $BOT_PATH/hubot.conf
 
-# Load the VERBOSE setting and other rcS variables
-. /lib/init/vars.sh
-
 # Define LSB log_* functions.
 # Depend on lsb-base (>= 3.2-14) to ensure that this file is present
 # and status_of_proc is working.
 . /lib/lsb/init-functions
+
+# Load the VERBOSE setting and other rcS variables
+. /lib/init/vars.sh
 
 do_start()
 {
@@ -47,6 +47,7 @@ do_start()
 
   touch $PIDFILE && chown $USER:$GROUP $PIDFILE
 
+    export "HUBOT_SLACK_TOKEN=$HUBOT_SLACK_TOKEN"
     start-stop-daemon --no-close --user $USER --quiet --start --pidfile $PIDFILE -c $USER:$GROUP \
       --make-pidfile \
       --background --chdir $BOT_PATH --exec $DAEMON -- \
