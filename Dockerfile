@@ -1,6 +1,8 @@
 FROM node:7-alpine
 MAINTAINER dotkom@online.ntnu.no
 
+ENV NODE_ENV=production
+
 ENV APP=/srv/app
 RUN mkdir -p $APP
 WORKDIR $APP

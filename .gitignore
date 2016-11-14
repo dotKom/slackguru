@@ -5,3 +5,5 @@ node_modules
 hubot.pid
 hubot.log
 hubot.conf
+
+.drone-secrets.yml

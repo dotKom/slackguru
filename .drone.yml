@@ -1,0 +1,37 @@
+compose:
+  redis:
+    image: redis
+
+build:
+  test:
+    image: node:7-alpine
+    commands:
+      - npm install
+      - ./node_modules/.bin/mocha -R dot --debug
+    environment:
+      SLACKGURU_LASTFM_TOKEN: "key"
+  publish:
+    image: docker
+    when:
+      branch: master
+      event: push
+    commands:
+      - docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD registry.online.ntnu.no
+      - docker build -t registry.online.ntnu.no/dotkom/slackguru:latest -f Dockerfile .
+      - docker push registry.online.ntnu.no/dotkom/slackguru:latest
+    environment:
+      REGISTRY_USERNAME: $$REGISTRY_USERNAME
+      REGISTRY_PASSWORD: $$REGISTRY_PASSWORD
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+deploy:
+  ssh:
+    when:
+      branch: master
+      event: push
+    host: vsop.dotkom
+    port: 22
+    user: root
+    commands:
+      - systemctl restart slackguru.service
