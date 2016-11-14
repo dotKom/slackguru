@@ -1,0 +1,41 @@
+{
+    "recenttracks": {
+        "track": [{
+            "artist": {
+                "#text": "Photographer",
+                "mbid": "007da219-07bc-4e52-9439-c6426f08f397"
+            },
+            "name": "Airport - Original Mix",
+            "streamable": "0",
+            "mbid": "",
+            "album": {
+                "#text": "Airport",
+                "mbid": "377b00fd-99f2-4ec9-ac5e-c65eaa7c4731"
+            },
+            "url": "https://www.last.fm/music/Photographer/_/Airport+-+Original+Mix",
+            "image": [{
+                "#text": "https://lastfm-img2.akamaized.net/i/u/34s/19c8fddfee6a4515a8e67b500d566ade.png",
+                "size": "small"
+            }, {
+                "#text": "https://lastfm-img2.akamaized.net/i/u/64s/19c8fddfee6a4515a8e67b500d566ade.png",
+                "size": "medium"
+            }, {
+                "#text": "https://lastfm-img2.akamaized.net/i/u/174s/19c8fddfee6a4515a8e67b500d566ade.png",
+                "size": "large"
+            }, {
+                "#text": "https://lastfm-img2.akamaized.net/i/u/300x300/19c8fddfee6a4515a8e67b500d566ade.png",
+                "size": "extralarge"
+            }],
+            "@attr": {
+                "nowplaying": "true"
+            }
+        }],
+        "@attr": {
+            "user": "Bob",
+            "page": "1",
+            "perPage": "1",
+            "totalPages": "1",
+            "total": "1"
+        }
+    }
+}

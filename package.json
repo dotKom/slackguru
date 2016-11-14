@@ -5,15 +5,22 @@
   "author": "Linjeforeningen Online dotkom@online.ntnu.no",
   "description": "Helping nerds not getting laid since 2008",
   "dependencies": {
-    "hubot": "^2.11.2",
+    "hubot": "^2.19.0",
     "hubot-help": "^0.2.0",
     "hubot-redis-brain": "0.0.3",
     "hubot-scripts": "^2.5.16",
     "hubot-shipit": "^0.2.0",
-    "hubot-slack": "^4.2.1",
-    "moment": "^2.15.1"
+    "hubot-slack": "^4.2.2",
+    "moment": "^2.15.1",
+    "redis": "^2.6.3"
   },
   "engines": {
     "node": "0.10.x"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "hubot-test-helper": "^1.5.0",
+    "mocha": "^3.1.2",
+    "nock": "^9.0.2"
   }
 }

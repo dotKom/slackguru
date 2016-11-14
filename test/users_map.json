@@ -1,0 +1,12 @@
+{
+  "users": {
+    "bob": {
+      "slack": "bob",
+      "lastfm": "Bob"
+    },
+    "john": {
+      "slack": "john",
+      "lastfm": "John"
+    }
+  }
+}
