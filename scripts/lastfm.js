@@ -169,7 +169,7 @@ var nowplaying = function(robot) {
 
   robot.hear(/^!np\sreg(?:ister)?\s(\S+)\s*$/i, function(res) {
     var sender = res.message.user.name.toLowerCase()
-    upsertLastFmUser(client, sender, res.message.text.split(' ')[1], function() {
+    upsertLastFmUser(client, sender, res.message.text.split(' ')[2], function() {
       // Get the inserted nickname and reply with it
       getLastFmNick(sender, function(err, reply) {
         if (err) {
