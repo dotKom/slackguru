@@ -1,0 +1,2 @@
+HSET "users" "bob" '{"lastfm": "Bob"}'
+HSET "users" "john" '{"lastfm": "John"}'

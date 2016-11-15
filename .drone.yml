@@ -3,6 +3,16 @@ compose:
     image: redis
 
 build:
+  test:
+    image: node:7-alpine
+    commands:
+      - apk add --update redis
+      - cat test/redis-data.txt | redis-cli --pipe
+      - npm set progress=false
+      - npm install
+      - ./node_modules/.bin/mocha --debug
+    environment:
+      SLACKGURU_LASTFM_TOKEN: "key"
   publish:
     image: docker
     when:

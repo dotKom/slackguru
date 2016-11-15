@@ -43,8 +43,8 @@ describe('lastfm', function() {
     this.room.destroy()
   })
 
-  describe('say!np', function() {
-    it('should respond with a song if I say !np', function(done) {
+  describe('!np', function() {
+    it('should respond with current song if I say !np while scrobbling', function(done) {
       this.room.user.say('bob', '!np')
         .then(function() {})
         .catch(function(err) {})
@@ -60,7 +60,7 @@ describe('lastfm', function() {
       }, 100)
     })
 
-    it('should respond with a song if I say !np but aint playing now too', function(done) {
+    it('should respond with previous song if I say !np while not scrobbling', function(done) {
       this.room.user.say('john', '!np')
         .then(function() {})
         .catch(function(err) {})
@@ -77,7 +77,7 @@ describe('lastfm', function() {
       }, 100)
     })
 
-    it('should set my nick if i tell it to', function(done) {
+    it('should set and store my nick if i register', function(done) {
       this.room.user.say('thor', '!np reg Thorium')
         .then(function() {})
         .catch(function(err) {})
