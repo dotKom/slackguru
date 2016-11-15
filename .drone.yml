@@ -8,6 +8,7 @@ build:
     commands:
       - apk add --update redis
       - cat test/redis-data.txt | redis-cli --pipe
+      - npm set progress=false
       - npm install
       - ./node_modules/.bin/mocha --debug
     environment:
