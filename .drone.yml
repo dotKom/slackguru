@@ -22,7 +22,7 @@ pipeline:
       event: push
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  deploy:
+  release:
     image: plugins/ssh
     host: vsop.online.ntnu.no
     port: 22
