@@ -14,7 +14,7 @@ pipeline:
   build:
     image: docker
     commands:
-      - docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD registry.online.ntnu.no
+      - docker login -u $DOCKER_REGISTRY_USERNAME -p $DOCKER_REGISTRY_PASSWORD registry.online.ntnu.no
       - docker build -t registry.online.ntnu.no/dotkom/slackguru:latest -f Dockerfile .
       - docker push registry.online.ntnu.no/dotkom/slackguru:latest
     when:
