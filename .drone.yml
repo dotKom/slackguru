@@ -27,7 +27,7 @@ pipeline:
     host: vsop.online.ntnu.no
     port: 22
     user: root
-    commands:
+    script:
       - systemctl restart slackguru.service
     when:
       branch: master
